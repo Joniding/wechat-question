@@ -11,13 +11,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    tabbar: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.editTabbar();
     var url = e;
     this.getCategory();
     console.log(url);

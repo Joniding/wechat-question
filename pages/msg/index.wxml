@@ -1,5 +1,4 @@
-<!--index.wxml-->
 <view>
-121212
+    this is msg page
 </view>
 <tabbar tabbar="{{tabbar}}"></tabbar> 

@@ -1,10 +1,9 @@
-//app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    //隐藏系统tabbar
+    wx.hideTabBar();
+    //获取设备信息
+    this.getSystemInfo();
 
     // 登录
     wx.login({
@@ -33,7 +32,68 @@ App({
       }
     })
   },
+  getSystemInfo: function () {
+    let t = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        t.globalData.systemInfo = res;
+      }
+    });
+  },
+  editTabbar: function () {
+    let tabbar = this.globalData.tabBar;
+    let currentPages = getCurrentPages();
+    let _this = currentPages[currentPages.length - 1];
+    let pagePath = _this.route;
+
+    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+
+    for (let i in tabbar.list) {
+      tabbar.list[i].selected = false;
+      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+    }
+    _this.setData({
+      tabbar: tabbar
+    });
+  },
   globalData: {
-    userInfo: null
+    systemInfo: null,//客户端设备信息
+    userInfo: null,
+    tabBar: {
+      "backgroundColor": "#ffffff",
+      "color": "#979795",
+      "selectedColor": "#1c1c1b",
+      "list": [
+        {
+          "pagePath": "/pages/index/index",
+          "iconPath": "icon/home.png",
+          "selectedIconPath": "icon/home_select.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "/pages/question/index",
+          "iconPath": "icon/question.png",
+          "selectedIconPath": "icon/question_select.png",
+          "text": "题库"
+        },
+        {
+          "pagePath": "/pages/center/index",
+          "iconPath": "icon/like_red.png",
+          "isSpecial": true
+        },
+        {
+          "pagePath": "/pages/msg/index",
+          "iconPath": "icon/msg.png",
+          "selectedIconPath": "icon/msg_select.png",
+          "text": "消息"
+        },
+        {
+          "pagePath": "/pages/my/index",
+          "iconPath": "icon/my.png",
+          "selectedIconPath": "icon/my_select.png",
+          "text": "我的"
+        },
+      ]
+    }
   }
 })
