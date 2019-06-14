@@ -22,6 +22,10 @@
         "text": "题库"
       },
       {
+        "pagePath": "pages/center/index",
+        "text": "喜欢"
+      },
+      {
         "pagePath": "pages/msg/index",
         "text": "消息"
       },

@@ -1,5 +1,67 @@
-<!--index.wxml-->
-<view>
-121212
+<view class='container'>
+  <view class='c-top'>
+    <image  src="../../resource/image/bg_01.png"></image>
+  </view>
+  <view class='c-content'>
+    <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/022.png'></image>
+      <view class='c-title'>
+        <text>我要答题</text>
+      </view>
+    </view>
+    <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/03.png'></image>
+      <view class='c-title'>
+        <text>个人中心</text>
+      </view>
+    </view>
+    <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/020.png'></image>
+      <view class='c-title'>
+        <text>题库分类</text>
+      </view>
+    </view>
+    <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/02.png'></image>
+      <view class='c-title'>
+        <text>学习积分</text>
+      </view>
+    </view>
+     <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/017.png'></image>
+      <view class='c-title'>
+        <text>趣味知识</text>
+      </view>
+    </view>
+    <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/07.png'></image>
+      <view class='c-title'>
+        <text>提交试题</text>
+      </view>
+    </view>
+     <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/03.png'></image>
+      <view class='c-title'>
+        <text>我要吐槽</text>
+      </view>
+    </view>
+    <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/025.png'></image>
+      <view class='c-title'>
+        <text>答题记录</text>
+      </view>
+    </view>
+     <view class='c-btn '>
+      <image mode='aspectFit' src='../../resource/image/025.png'></image>
+      <view class='c-title'>
+        <text>视听学习</text>
+      </view>
+    </view>
+    
+  </view>
 </view>
-<tabbar tabbar="{{tabbar}}"></tabbar> 
+
+<!-- 底部导航层 -->
+<view class='footer'>
+  <tabbar tabbar="{{tabbar}}"></tabbar> 
+</view>
